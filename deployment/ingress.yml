@@ -7,11 +7,18 @@ metadata:
   annotations:
     ingress.kubernetes.io/ssl-redirect: "false"
     traefik.ingress.kubernetes.io/rewrite-target: /
+    traefik.ingress.kubernetes.io/frontend-entry-points: http,https
+    traefik.ingress.kubernetes.io/redirect-entry-point: https
+    traefik.ingress.kubernetes.io/redirect-permanent: "true"
 spec:
+  ingressClassName: traefik
   rules:
   - http:
       paths:
       - path: /app
+        pathType: Prefix
         backend:
-          serviceName: website-service
-          servicePort: 80
+          service:
+            name: iot-pong-svc
+            port:
+              number: 80
