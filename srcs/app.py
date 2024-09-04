@@ -4,4 +4,4 @@ app = Flask(__name__)
 
 @app.route("/")
 def version():
-    return (dict(ver='v1', msg='Pong'))
+    return (dict(ver='v2', msg='Pong'))
