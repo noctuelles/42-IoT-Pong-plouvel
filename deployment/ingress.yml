@@ -19,13 +19,12 @@ spec:
             port:
               number: 80
 ---
-apiVersion: traefik.containo.us/v1alpha1
+apiVersion: traefik.io/v1alpha1
 kind: Middleware
 metadata:
   name: mw-iot-pong
-  namespace: dev
 spec:
   stripPrefix:
-    forceSlash: false
     prefixes:
-      - /app
+      - "/app"
+    forceSlash: false
