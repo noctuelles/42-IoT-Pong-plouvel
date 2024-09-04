@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iot-pong
+  labels:
+    app: iot-pong
+  namespace: dev
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: iot-pong
+  template:
+    metadata:
+      labels:
+        app: iot-pong
+    spec:
+      containers:
+      - name: iot-pong
+        image: plouvel/iot-pong:v1
+        ports:
+        - containerPort: 8888
