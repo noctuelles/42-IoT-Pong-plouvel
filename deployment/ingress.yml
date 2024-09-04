@@ -5,8 +5,7 @@ metadata:
   labels:
     app: iot-pong
   annotations:
-    traefik.ingress.kubernetes.io/rewrite-target: /
-    traefik.ingress.kubernetes.io/router.middlewares: mw-iot-pong@dev
+    traefik.ingress.kubernetes.io/router.middlewares: dev-mw-iot-pong@kubernetescrd
 spec:
   ingressClassName: traefik
   rules:
