@@ -5,9 +5,7 @@ metadata:
   labels:
     app: iot-pong
   annotations:
-    ingress.kubernetes.io/ssl-redirect: "false"
     traefik.ingress.kubernetes.io/rewrite-target: /
-    traefik.ingress.kubernetes.io/rule-type: "PathPrefixStrip"
 spec:
   ingressClassName: traefik
   rules:
