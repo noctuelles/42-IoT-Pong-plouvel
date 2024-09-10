@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: iot-pong
-        image: plouvel/iot-pong:v1
+        image: plouvel/iot-pong:v2
         ports:
         - containerPort: 8888
